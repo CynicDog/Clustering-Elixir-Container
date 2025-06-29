@@ -4,7 +4,7 @@ This guide shows how to set up distributed Elixir nodes between your **host mach
 
 ## On Host Machine 🧑🏻‍💻 
 
-### Start a BEAM node on the host machine
+#### Start a BEAM node on the host machine
 
 ```bash
 cynocdig@CynicDogs-MacBook % iex --name host@host.docker.internal --cookie mycookie
@@ -15,7 +15,7 @@ On macOS and Windows, Docker automatically sets `host.docker.internal` inside co
 
 ## On Docker Container 🐋
 
-### Run the container with network configuration
+#### Run the container with network configuration
 
 ```bash
 cynocdig@CynicDogs-MacBook % docker run -it --rm \
@@ -23,12 +23,12 @@ cynocdig@CynicDogs-MacBook % docker run -it --rm \
   elixir bash
 ```
 
-### Start a BEAM node inside the container
+#### Start a BEAM node inside the container
 ```bash
 root@3e185f96415a:/# iex --name elixir_node@container --cookie mycookie
 ```
 
-### Connect container node to host node
+#### Connect container node to host node
 ```bash
 iex(elixir_node@container)1> Node.connect(:'host@host.docker.internal')
 ```
