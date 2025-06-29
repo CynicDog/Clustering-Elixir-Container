@@ -28,7 +28,6 @@ cynocdig@CynicDogs-MacBook % docker run -it --rm \
   --add-host host.docker.internal:host-gateway \
   elixir:1.18.3 bash
 ```
-> Adding `--add-host host.docker.internal:host-gateway` makes the special DNS name `host.docker.internal` inside the container resolve to your Mac host IP, enabling container to reach the host.
 
 ### Start a BEAM node inside the container
 ```bash
