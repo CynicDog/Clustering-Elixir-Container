@@ -20,7 +20,7 @@ On macOS and Windows, Docker automatically sets `host.docker.internal` inside co
 ```bash
 cynocdig@CynicDogs-MacBook % docker run -it --rm \
   --add-host host.docker.internal:host-gateway \
-  elixir:1.18.3 bash
+  elixir bash
 ```
 
 ### Start a BEAM node inside the container
