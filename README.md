@@ -1,10 +1,8 @@
 # Communicate with an Elixir Node in Docker Container
-
 This guide shows how to set up distributed Elixir nodes between your **host machine (macOS)** and a **Docker container** using node names and cookies, and how to call functions remotely.
 
----
 
-## On Host Machine
+## On Host Machine 🧑🏻‍💻 
 
 ### Start a BEAM node on the host machine
 
@@ -19,7 +17,7 @@ This allows containers to access services running on the host via that hostname.
 
 Without this, containers would have trouble finding and connecting back to the host’s node because hostnames/IPs may be dynamic or inaccessible.
 
-## On Docker Container
+## On Docker Container 🐋
 
 ### Run the container with network configuration
 
