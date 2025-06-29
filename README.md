@@ -13,10 +13,6 @@ cynocdig@CynicDogs-MacBook % iex --name host@host.docker.internal --cookie mycoo
 `host.docker.internal` is a special DNS name Docker provides
 On macOS and Windows, Docker automatically sets `host.docker.internal` inside containers to point back to the host machine.
 
-This allows containers to access services running on the host via that hostname.
-
-Without this, containers would have trouble finding and connecting back to the host’s node because hostnames/IPs may be dynamic or inaccessible.
-
 ## On Docker Container 🐋
 
 ### Run the container with network configuration
