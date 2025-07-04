@@ -10,9 +10,6 @@ This guide shows how to set up distributed Elixir nodes between your **host mach
 cynocdig@CynicDogs-MacBook % iex --name host@host.docker.internal --cookie mycookie
 ````
 
-`host.docker.internal` is a special DNS name Docker provides
-On macOS and Windows, Docker automatically sets `host.docker.internal` inside containers to point back to the host machine.
-
 ## On Docker Container 🐋
 
 #### Run the container with network configuration
@@ -22,6 +19,19 @@ cynocdig@CynicDogs-MacBook % docker run -it --rm \
   --add-host host.docker.internal:host-gateway \
   elixir bash
 ```
+
+> [!NOTE]
+> #### Curious about `host.docker.internal`?
+>
+> If you check the container’s `/etc/hosts` file, you’ll see something like:
+> ```bash
+> root@container:/# cat /etc/hosts
+> 127.0.0.1	localhost
+> ::1	        localhost ip6-localhost ip6-loopback
+> ...
+> 192.168.65.254	host.docker.internal
+> ```
+> That `192.168.65.254 host.docker.internal`  line is a special DNS entry Docker provides to containers to reach the host machine.
 
 #### Start a BEAM node inside the container
 ```bash
