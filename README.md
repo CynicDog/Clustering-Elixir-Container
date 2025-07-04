@@ -45,7 +45,7 @@ iex(elixir_node@container)1> Node.connect(:'host@host.docker.internal')
 
 ## Say Hello to the Host Node!
 
-Define a module on both the host and container nodes:
+Define a module on both the host node:
 
 ```elixir
 defmodule Greet do
@@ -54,7 +54,7 @@ defmodule Greet do
   end
 end
 ```
-> Avoid sending anonymous functions between nodes. Distributed BEAM nodes send function “closures” as a serialized object. For remote execution (e.g., Node.spawn/2), the function must be sent (serialized) over the network.
+> Avoid sending anonymous functions between nodes. Distributed BEAM nodes send function “closures” as a serialized object. For remote execution (e.g., `Node.spawn/2`), the function must be sent (serialized) over the network.
  
 Then, from the container node IEx shell, call the function remotely on the host node:
 
