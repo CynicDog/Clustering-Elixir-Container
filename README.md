@@ -54,7 +54,7 @@ defmodule Greet do
   end
 end
 ```
-> Avoid sending anonymous functions between nodes. Distributed BEAM nodes send function “closures” as a serialized object. For remote execution (e.g., `Node.spawn/2`), the function must be sent (serialized) over the network.
+> Avoid sending anonymous functions between remote nodes. Distributed BEAM nodes send function “closures” as a serialized object. For remote execution (e.g., `Node.spawn/2`), the function must be sent (serialized) over the network.
  
 Then, from the container node IEx shell, call the function remotely on the host node:
 
